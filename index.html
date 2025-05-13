@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Solar System Animation</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+      overflow: hidden;
+    }
+
+    .sun {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100px;
+      height: 100px;
+      background: yellow;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 50px 20px yellow;
+      z-index: 10;
+    }
+
+    .earth-orbit {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 300px;
+      height: 300px;
+      margin-left: -150px;
+      margin-top: -150px;
+      border: 1px dashed #888;
+      border-radius: 50%;
+      animation: rotateEarth 10s linear infinite;
+    }
+
+    .earth {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 40px;
+      height: 40px;
+      background: blue;
+      border-radius: 50%;
+      transform: translate(-50%);
+      box-shadow: 0 0 10px 2px #00f;
+    }
+
+    .moon-orbit {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 80px;
+      height: 80px;
+      margin-left: -40px;
+      margin-top: -40px;
+      border: 1px dotted #aaa;
+      border-radius: 50%;
+      animation: rotateMoon 2s linear infinite;
+    }
+
+    .moon {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 15px;
+      height: 15px;
+      background: lightgray;
+      border-radius: 50%;
+      transform: translate(-50%);
+      box-shadow: 0 0 5px 2px #ccc;
+    }
+
+    @keyframes rotateEarth {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+
+    @keyframes rotateMoon {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="sun"></div>
+  <div class="earth-orbit">
+    <div class="earth">
+      <div class="moon-orbit">
+        <div class="moon"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
